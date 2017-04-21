@@ -1,0 +1,37 @@
+{
+  "name": "v-antd",
+  "version": "1.0.0",
+  "description": "UI components library width Vue.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --content-base test/ --inline --hot --compress --port 8081",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wy1009/v-antd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wy1009/v-antd/issues"
+  },
+  "homepage": "https://github.com/wy1009/v-antd#readme",
+  "dependencies": {
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-preset-latest": "^6.0.0",
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.9.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "vue": "^2.2.1",
+    "vue-loader": "^11.1.4",
+    "vue-router": "^2.4.0",
+    "vue-template-compiler": "^2.2.1",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.0"
+  }
+}
