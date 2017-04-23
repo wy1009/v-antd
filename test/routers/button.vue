@@ -1,6 +1,9 @@
 <template>
     <div class="button">
-        <v-button></v-button>
+        <v-button type="primary">primary</v-button>
+        <v-button>default</v-button>
+        <v-button type="dashed">dashed</v-button>
+        <v-button type="danger">danger</v-button>
     </div>
 </template>
 

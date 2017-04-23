@@ -1,8 +1,8 @@
-
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // 正式打包测试时使用
-// import vAntd from './dist/vAntd.js'
+// import vAntd from './dist/v-antd.js'
+import './dist/v-antd.css'
 
 Vue.use(VueRouter)
 // Vue.use(vAntd)

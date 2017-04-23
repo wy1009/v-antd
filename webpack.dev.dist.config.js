@@ -10,8 +10,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, './test/dist'),
         publicPath: '/dist/',
-        filename: 'vAntd.js',
-        library: 'vAntd',
+        filename: 'v-antd.js',
+        library: 'v-antd',
         libraryTarget: 'umd'
     },
     // 加载器

@@ -14,8 +14,7 @@ module.exports = {
     },
     // 加载器
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
@@ -26,6 +25,12 @@ module.exports = {
                         })
                     }
                 }
+            }, {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader'
+                })
             },
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
             { test: /\.(png|jpg|gif|svg)$/, loader: 'file-loader', options: { name: '[name].[ext]?[hash]' } }
