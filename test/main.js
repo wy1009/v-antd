@@ -10,10 +10,12 @@ Vue.use(VueRouter)
 import App from './app.vue'
 import Home from './routers/home.vue'
 import Button from './routers/button.vue'
+import Affix from './routers/affix.vue'
 
 var routes = [
     { name: 'home', path: '/', component: Home },
-    { name: 'button', path: '/button', component: Button }
+    { name: 'button', path: '/button', component: Button },
+    { name: 'affix', path: '/affix', component: Affix }
 ]
 
 var router = new VueRouter({
