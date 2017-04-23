@@ -1,7 +1,11 @@
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// 正式打包测试时使用
+// import vAntd from './dist/vAntd.js'
 
 Vue.use(VueRouter)
+// Vue.use(vAntd)
 
 import App from './app.vue'
 import Home from './routers/home.vue'

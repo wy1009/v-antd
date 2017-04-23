@@ -4,7 +4,7 @@
   "description": "UI components library width Vue.js",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base test/ --inline --hot --compress --port 8081",
+    "dev": "webpack-dev-server --content-base test/ --inline --hot --compress --port 8081 --config webpack.dev.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

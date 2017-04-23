@@ -4,13 +4,15 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
     // 入口
     entry: {
-        main: './test/main.js'
+        main: './src/index.js'
     },
     // 输出
     output: {
         path: path.join(__dirname, './test/dist'),
         publicPath: '/dist/',
-        filename: 'bundle.js'
+        filename: 'vAntd.js',
+        library: 'vAntd',
+        libraryTarget: 'umd'
     },
     // 加载器
     module: {
@@ -30,11 +32,6 @@ module.exports = {
             { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
             { test: /\.(png|jpg|gif|svg)$/, loader: 'file-loader', options: { name: '[name].[ext]?[hash]' } }
         ]
-    },
-    resolve: {
-        alias: {
-            'vAntd': '../../src/index.js'
-        }
     },
     plugins: [
         new ExtractTextPlugin('[name].css')
