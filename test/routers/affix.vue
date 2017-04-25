@@ -2,7 +2,7 @@
     <div class="affix">
         <div class="placeholder"></div>
         <affix>
-            <div class="test">aaa</div>
+            <div class="test">aaaaaaaaaaaaaaaaaaa</div>
         </affix>
         <div class="placeholder"></div>
     </div>

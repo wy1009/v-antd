@@ -1,6 +1,6 @@
 <template>
     <div :class="classes" :style="styles">
-        ccccccccccccccccc
+    cccccccccccccccccccccccccccccc
         <slot></slot>
     </div>
 </template>
@@ -56,11 +56,14 @@ export default {
         scrollHandle () {
             var offset = this.getOffset(this.$el)
             if (this.affixType === 'top') {
-                if (offset.top < this.offsetTop) {
+                // 实际距离屏幕顶端高度小于设定高度
+                console.log(offset.top)
+                if (offset.top <= this.offsetTop) {
                     this.affix = true
-                    this.styles = `position: fixed; left: ${offset.left}; top: ${this.offsetTop}`
+                    this.styles = `left: ${offset.left}; top: ${this.offsetTop}`
                 } else {
-
+                    this.affix = false
+                    this.styles = null
                 }
             } else if (this.affixType === 'bottom') {
 
