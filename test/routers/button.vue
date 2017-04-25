@@ -9,11 +9,11 @@
 
 <script>
 // 正式打包测试时不需要引入，也不需要单独注册组件
-import vAntd from 'vAntd'
+// import vAntd from 'vAntd'
 
-export default {
-    components: {
-        VButton: vAntd.VButton
-    }
-}
+// export default {
+//     components: {
+//         VButton: vAntd.VButton
+//     }
+// }
 </script>

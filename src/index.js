@@ -1,7 +1,9 @@
 import VButton from './components/button/index.js'
+import Affix from './components/Affix/index.js'
 
 const vAntd = {
-    VButton: VButton
+    VButton: VButton,
+    Affix: Affix
 }
 
 const install = function (Vue) {

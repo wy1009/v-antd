@@ -1,5 +1,6 @@
 <template>
-    <div :class="classes">
+    <div :class="classes" :style="styles">
+        ccccccccccccccccc
         <slot></slot>
     </div>
 </template>
@@ -11,7 +12,7 @@ export default {
     data () {
         return {
             affix: false,
-            styles: {}
+            styles: ''
         }
     },
     props: {
@@ -34,6 +35,12 @@ export default {
             return 'top'
         }
     },
+    mounted () {
+        var self = this
+        document.addEventListener('scroll', function () {
+            self.scrollHandle()
+        })
+    },
     methods: {
         getOffset (element) {
             const rect = element.getBoundingClientRect()
@@ -47,12 +54,11 @@ export default {
             }
         },
         scrollHandle () {
+            var offset = this.getOffset(this.$el)
             if (this.affixType === 'top') {
-                if (this.getOffset(this.$el).top < this.offsetTop) {
+                if (offset.top < this.offsetTop) {
                     this.affix = true
-                    this.styles = {
-                        
-                    }
+                    this.styles = `position: fixed; left: ${offset.left}; top: ${this.offsetTop}`
                 } else {
 
                 }

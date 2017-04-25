@@ -17,4 +17,4 @@ gulp.task('watch', function () {
     gulp.watch(['./src/styles/*.*', './src/styles/**/*.*'], ['css'])
 })
 
-gulp.task('default', ['css'])
+gulp.task('default', ['css', 'watch'])
