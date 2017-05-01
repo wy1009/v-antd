@@ -1,7 +1,8 @@
 <template>
-    <div :class="classes" :style="styles">
-    cccccccccccccccccccccccccccccc
-        <slot></slot>
+    <div>
+        <div :class="classes" :style="styles">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -26,7 +27,9 @@ export default {
     },
     computed: {
         classes () {
-            return `${prefixCls}`
+            return {
+                [`${prefixCls}`]: this.affix
+            }
         },
         affixType () {
             if (this.offsetBottom !== undefined) {
@@ -50,23 +53,41 @@ export default {
             const clientLeft = document.documentElement.clientLeft || document.body.clientTop || 0
             return {
                 top: rect.top + clientTop,
-                left: rect.left + clientLeft
+                left: rect.left + clientLeft,
+                bottom: rect.bottom - clientTop,
+                height: rect.height
             }
+        },
+        getClientHeight () {
+            return document.documentElement.clientHeight || document.body.clientHeight
         },
         scrollHandle () {
             var offset = this.getOffset(this.$el)
             if (this.affixType === 'top') {
                 // 实际距离屏幕顶端高度小于设定高度
-                console.log(offset.top)
                 if (offset.top <= this.offsetTop) {
-                    this.affix = true
-                    this.styles = `left: ${offset.left}; top: ${this.offsetTop}`
+                    if (!this.affix) {
+                        this.affix = true
+                        this.styles = `left: ${offset.left}px; top: ${this.offsetTop}px;`
+                    }
                 } else {
-                    this.affix = false
-                    this.styles = null
+                    if (this.affix) {
+                        this.affix = false
+                        this.styles = null
+                    }
                 }
             } else if (this.affixType === 'bottom') {
-
+                if (offset.bottom + this.offsetBottom >= this.getClientHeight()) {
+                    if (!this.affix) {
+                        this.affix = true
+                        this.styles = `left: ${offset.left}px; bottom: ${this.offsetBottom}px;`
+                    }
+                } else {
+                    if (this.affix) {
+                        this.affix = false
+                        this.styles = null
+                    }
+                }
             }
         }
     }

@@ -2,21 +2,14 @@
     <div class="affix">
         <div class="placeholder"></div>
         <affix>
-            <div class="test">aaaaaaaaaaaaaaaaaaa</div>
+            <v-button>affix top</v-button>
+        </affix>
+        <affix :offset-bottom="10">
+            <v-button>10px to affix bottom</v-button>
         </affix>
         <div class="placeholder"></div>
     </div>
 </template>
-
-<script>
-// import vAntd from 'vAntd'
-
-// export default {
-//     components: {
-//         Affix: vAntd.Affix
-//     }
-// }
-</script>
 
 <style lang="sass">
 .affix {
