@@ -1,9 +1,12 @@
 import VButton from './components/button/index.js'
-import Affix from './components/Affix/index.js'
+import Affix from './components/affix/index.js'
+import Breadcrumb from './components/breadcrumb/index.js'
 
 const vAntd = {
-    VButton: VButton,
-    Affix: Affix
+    VButton,
+    Affix,
+    Breadcrumb,
+    BreadcrumbItem: Breadcrumb.Item
 }
 
 const install = function (Vue) {

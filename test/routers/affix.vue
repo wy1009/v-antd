@@ -1,5 +1,6 @@
 <template>
     <div class="affix">
+        <h1>固钉</h1>
         <div class="placeholder"></div>
         <affix>
             <v-button>affix top</v-button>

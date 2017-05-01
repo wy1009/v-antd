@@ -10,11 +10,13 @@ import App from './app.vue'
 import Home from './routers/home.vue'
 import Button from './routers/button.vue'
 import Affix from './routers/affix.vue'
+import Breadcrumb from './routers/breadcrumb.vue'
 
 var routes = [
     { name: 'home', path: '/', component: Home },
     { name: 'button', path: '/button', component: Button },
-    { name: 'affix', path: '/affix', component: Affix }
+    { name: 'affix', path: '/affix', component: Affix },
+    { name: 'breadcrumb', path: '/breadcrumb', component: Breadcrumb }
 ]
 
 var router = new VueRouter({
