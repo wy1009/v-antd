@@ -64,7 +64,7 @@ export default {
         scrollHandle () {
             var offset = this.getOffset(this.$el)
             if (this.affixType === 'top') {
-                // 实际距离屏幕顶端高度小于设定高度
+                // 元素距离屏幕顶端高度小于设定高度
                 if (offset.top <= this.offsetTop) {
                     if (!this.affix) {
                         this.affix = true
@@ -77,6 +77,7 @@ export default {
                     }
                 }
             } else if (this.affixType === 'bottom') {
+                // 元素底部低于屏幕，即元素底部距离屏幕顶部大于屏幕高度；如有设定值，则为元素底部距离屏幕顶部加上设定值大于屏幕高度
                 if (offset.bottom + this.offsetBottom >= this.getClientHeight()) {
                     if (!this.affix) {
                         this.affix = true
