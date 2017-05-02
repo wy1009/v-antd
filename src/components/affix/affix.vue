@@ -68,11 +68,13 @@ export default {
                 if (offset.top <= this.offsetTop) {
                     if (!this.affix) {
                         this.affix = true
+                        this.$emit('on-change', this.affix)
                         this.styles = `left: ${offset.left}px; top: ${this.offsetTop}px;`
                     }
                 } else {
                     if (this.affix) {
                         this.affix = false
+                        this.$emit('on-change', this.affix)
                         this.styles = null
                     }
                 }
@@ -81,11 +83,13 @@ export default {
                 if (offset.bottom + this.offsetBottom >= this.getClientHeight()) {
                     if (!this.affix) {
                         this.affix = true
+                        this.$emit('on-change', this.affix)
                         this.styles = `left: ${offset.left}px; bottom: ${this.offsetBottom}px;`
                     }
                 } else {
                     if (this.affix) {
                         this.affix = false
+                        this.$emit('on-change', this.affix)
                         this.styles = null
                     }
                 }
