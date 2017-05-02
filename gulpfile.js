@@ -13,8 +13,13 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./test/dist'))
 })
 
+gulp.task('font', function () {
+    gulp.src('./src/styles/common/iconfont/*.*')
+        .pipe(gulp.dest('./test/dist/iconfont'))
+})
+
 gulp.task('watch', function () {
     gulp.watch(['./src/styles/*.*', './src/styles/**/*.*'], ['css'])
 })
 
-gulp.task('default', ['css', 'watch'])
+gulp.task('default', ['font', 'css', 'watch'])

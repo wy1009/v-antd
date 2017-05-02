@@ -1,3 +1,5 @@
+// 测试环境打包库
+
 var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 

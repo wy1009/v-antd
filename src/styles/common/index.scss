@@ -1,2 +1,4 @@
+// iconfont没有进入到scss的逻辑，即没有被打包为一个文件，而是在打包完毕的文件中直接@import，因此需要dist路径中存在此css文件
+@import './iconfont/iconfont.css';
 @import './custom';
 @import './base';
