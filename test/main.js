@@ -11,12 +11,14 @@ import Home from './routers/home.vue'
 import Button from './routers/button.vue'
 import Affix from './routers/affix.vue'
 import Breadcrumb from './routers/breadcrumb.vue'
+import BackTop from './routers/back-top.vue'
 
 var routes = [
     { name: 'home', path: '/', component: Home },
     { name: 'button', path: '/button', component: Button },
     { name: 'affix', path: '/affix', component: Affix },
-    { name: 'breadcrumb', path: '/breadcrumb', component: Breadcrumb }
+    { name: 'breadcrumb', path: '/breadcrumb', component: Breadcrumb },
+    { name: 'backTop', path: '/backtop', component: BackTop }
 ]
 
 var router = new VueRouter({
