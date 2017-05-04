@@ -1,9 +1,7 @@
 <template>
     <div :class="classes">
         <slot></slot>
-        <ul :class="menuClasses">
-            <slot name="list"></slot>
-        </ul>
+        <slot name="list"></slot>
     </div>
 </template>
 
