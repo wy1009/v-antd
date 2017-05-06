@@ -1,0 +1,10 @@
+$prefix-dropdown: #{$css-prefix}dropdown;
+
+.#{$prefix-dropdown} {
+    &-menu {
+        &-item {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    }
+}

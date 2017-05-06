@@ -12,9 +12,6 @@ export default {
     computed: {
         classes () {
             return prefixCls
-        },
-        menuClasses () {
-            return `${prefixCls}-menu`
         }
     }
 }

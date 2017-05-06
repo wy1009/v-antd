@@ -1,13 +1,13 @@
-$prefixCls-back-top: #{$css-prefix}back-top;
+$prefix-cls-back-top: #{$css-prefix}back-top;
 
-.#{$prefixCls-back-top} {
+.#{$prefix-cls-back-top} {
     position: fixed;
     right: 100px;
     bottom: 50px;
     width: 40px;
     height: 40px;
     cursor: pointer;
-    .#{$prefixCls-back-top}-content {
+    &-content {
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -18,7 +18,7 @@ $prefixCls-back-top: #{$css-prefix}back-top;
         &:hover {
             background: rgba(64, 64, 64, .6);
         }
-        .#{$prefixCls-back-top}-icon {
+        .#{$prefix-cls-back-top}-icon {
             font-size: 20px;
             margin-top: 10px;
             line-height: 20px;
