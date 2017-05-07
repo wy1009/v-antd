@@ -10,7 +10,9 @@ const prefixCls = 'ant-col'
 export default {
     props: {
         span: [Number, String],
-        offset: [Number, String]
+        offset: [Number, String],
+        push: [Number, String],
+        pull: [Number, String]
     },
     data () {
         return {
@@ -21,7 +23,9 @@ export default {
         classes () {
             return [prefixCls, {
                     [`${prefixCls}-${this.span}`]: this.span !== undefined,
-                    [`${prefixCls}-offset-${this.offset}`]: this.offset
+                    [`${prefixCls}-offset-${this.offset}`]: this.offset,
+                    [`${prefixCls}-push-${this.push}`]: this.push,
+                    [`${prefixCls}-pull-${this.pull}`]: this.pull
                 }]
         },
         styles () {
