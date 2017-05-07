@@ -9,11 +9,8 @@ const prefixCls = 'ant-col'
 
 export default {
     props: {
-        span: {
-            validator (value) {
-                return Math.floor(value) == value && value <= 24
-            }
-        }
+        span: [Number, String],
+        offset: [Number, String]
     },
     data () {
         return {
@@ -22,10 +19,10 @@ export default {
     },
     computed: {
         classes () {
-            if (this.span !== undefined) {
-                return [prefixCls, `${prefixCls}-${this.span}`]
-            }
-            return prefixCls
+            return [prefixCls, {
+                    [`${prefixCls}-${this.span}`]: this.span !== undefined,
+                    [`${prefixCls}-offset-${this.offset}`]: this.offset
+                }]
         },
         styles () {
             return {

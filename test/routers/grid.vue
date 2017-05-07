@@ -16,6 +16,13 @@
             <v-col :span="8"><div class="gutter-box">col-8</div></v-col>
             <v-col :span="8"><div class="gutter-box">col-8</div></v-col>
         </row>
+        <row>
+            <v-col :span="8">col-8</v-col>
+            <v-col :span="8" :offset="8">col-8 col-offset-8</v-col>
+            <v-col :span="6" :offset="6">col-6 col-offset-6</v-col>
+            <v-col :span="6" :offset="6">col-6 col-offset-6</v-col>
+            <v-col :span="12" :offset="6">col-12 col-offset-6</v-col>
+        </row>
     </div>
 </template>
 
