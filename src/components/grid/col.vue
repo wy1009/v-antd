@@ -1,5 +1,5 @@
 <template>
-    <div :class="classes">
+    <div :class="classes" :style="styles">
         <slot></slot>
     </div>
 </template>
@@ -15,12 +15,23 @@ export default {
             }
         }
     },
+    data () {
+        return {
+            gutter: 0
+        }
+    },
     computed: {
         classes () {
             if (this.span !== undefined) {
-                return `${prefixCls}-${this.span}`
+                return [prefixCls, `${prefixCls}-${this.span}`]
             }
             return prefixCls
+        },
+        styles () {
+            return {
+                paddingLeft: this.gutter / 2 + 'px',
+                paddingRight: this.gutter / 2 + 'px'
+            }
         }
     }
 }
