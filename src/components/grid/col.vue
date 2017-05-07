@@ -1,9 +1,11 @@
 <template>
-    <div :class="classes"></div>
+    <div :class="classes">
+        <slot></slot>
+    </div>
 </template>
 
 <script>
-const prefixCls = 'ant-rol'
+const prefixCls = 'ant-col'
 
 export default {
     props: {

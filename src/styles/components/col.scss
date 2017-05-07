@@ -1,0 +1,12 @@
+$prefix-cls-col: #{$css-prefix}col;
+
+.#{$prefix-cls-col}-0 {
+    display: none;
+}
+
+@for $i from 1 through 24 {
+    .#{$prefix-cls-col}-#{$i} {
+        width: (1 / (24 / $i)) * 100%;
+        float: left;
+    }
+}
