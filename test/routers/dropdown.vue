@@ -1,10 +1,18 @@
 <template>
-    <dropdown>
-        <a href="javascript:;">Hover me</a>
-        <dropdown-menu>
+    <div class="dropdown">
+        <dropdown>
+            <a href="javascript:;" slot="rel">Hover me <i class="anticon icon-down"></i></a>
             <dropdown-menu-item>1st menu item</dropdown-menu-item>
             <dropdown-menu-item>2nd menu item</dropdown-menu-item>
             <dropdown-menu-item>3d menu item</dropdown-menu-item>
-        </dropdown-menu>
-    </dropdown>
+        </dropdown>
+    </div>
 </template>
+
+<style lang="sass">
+.dropdown {
+    i {
+        font-size: 12px;
+    }
+}
+</style>
