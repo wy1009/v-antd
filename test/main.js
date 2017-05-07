@@ -12,7 +12,7 @@ import Button from './routers/button.vue'
 import Affix from './routers/affix.vue'
 import Breadcrumb from './routers/breadcrumb.vue'
 import BackTop from './routers/back-top.vue'
-import Dropdown from './routers/dropdown.vue'
+// import Dropdown from './routers/dropdown.vue'
 
 var routes = [
     { name: 'home', path: '/', component: Home },
@@ -20,7 +20,7 @@ var routes = [
     { name: 'affix', path: '/affix', component: Affix },
     { name: 'breadcrumb', path: '/breadcrumb', component: Breadcrumb },
     { name: 'backTop', path: '/backtop', component: BackTop },
-    { name: 'dropdown', path: '/dropdown', component: Dropdown }
+    // { name: 'dropdown', path: '/dropdown', component: Dropdown }
 ]
 
 var router = new VueRouter({
