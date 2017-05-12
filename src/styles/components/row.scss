@@ -1,0 +1,12 @@
+$prefix-cls-row: #{$css-prefix}row;
+
+.#{$prefix-cls-row} {
+    &::after {
+        display: block;
+        content: ' ';
+        clear: both;
+        visibility: hidden;
+        height: 0;
+        font-size: 0;
+    }
+}

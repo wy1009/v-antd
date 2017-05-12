@@ -2,7 +2,8 @@ import VButton from './components/button/index.js'
 import Affix from './components/affix/index.js'
 import Breadcrumb from './components/breadcrumb/index.js'
 import BackTop from './components/back-top/index.js'
-// import Dropdown from './components/dropdown/index.js'
+import Dropdown from './components/dropdown/index.js'
+import Grid from './components/grid/index.js'
 
 const vAntd = {
     VButton,
@@ -10,8 +11,10 @@ const vAntd = {
     Breadcrumb,
     BreadcrumbItem: Breadcrumb.Item,
     BackTop,
-    // Dropdown,
-    // DropdownMenuItem: Dropdown.MenuItem
+    Dropdown,
+    DropdownMenuItem: Dropdown.MenuItem,
+    Row: Grid.Row,
+    VCol: Grid.Col
 }
 
 const install = function (Vue) {

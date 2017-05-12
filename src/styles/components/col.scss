@@ -1,0 +1,25 @@
+$prefix-cls-col: #{$css-prefix}col;
+
+.#{$prefix-cls-col} {
+    position: relative;
+    &-0 {
+        display: none;
+    }
+}
+
+@for $i from 1 through 24 {
+    $width: ($i / 24) * 100%;
+    .#{$prefix-cls-col}-#{$i} {
+        width: #{$width};
+        float: left;
+    }
+    .#{$prefix-cls-col}-offset-#{$i} {
+        margin-left: #{$width};
+    }
+    .#{$prefix-cls-col}-push-#{$i} {
+        left: #{$width};
+    }
+    .#{$prefix-cls-col}-pull-#{$i} {
+        right: #{$width};
+    }
+}
