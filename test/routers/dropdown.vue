@@ -1,10 +1,12 @@
 <template>
     <div class="dropdown">
         <dropdown>
-            <a href="javascript:;" slot="rel">Hover me <i class="anticon icon-down"></i></a>
-            <dropdown-menu-item>1st menu item</dropdown-menu-item>
-            <dropdown-menu-item>2nd menu item</dropdown-menu-item>
-            <dropdown-menu-item>3d menu item</dropdown-menu-item>
+            <a href="javascript:;">Hover me <i class="anticon icon-down"></i></a>
+            <dropdown-menu slot="list">
+                <dropdown-menu-item>1st menu item</dropdown-menu-item>
+                <dropdown-menu-item>2nd menu item</dropdown-menu-item>
+                <dropdown-menu-item>3d menu item</dropdown-menu-item>
+            </dropdown-menu>
         </dropdown>
     </div>
 </template>

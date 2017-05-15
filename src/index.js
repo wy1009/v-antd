@@ -12,6 +12,7 @@ const vAntd = {
     BreadcrumbItem: Breadcrumb.Item,
     BackTop,
     Dropdown,
+    DropdownMenu: Dropdown.Menu,
     DropdownMenuItem: Dropdown.MenuItem,
     Row: Grid.Row,
     VCol: Grid.Col
