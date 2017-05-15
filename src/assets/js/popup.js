@@ -18,10 +18,12 @@ export default {
         }
     },
     mounted () {
-        this.listenToggleVisible()
         this.movePopper()
+        this.listenToggleVisible()
+        this.bindClickOutside()
     },
     methods: {
+        // 将popper移到最外层
         movePopper () {
             $body.appendChild(this.$el)
             const parentPosition = this.$parent.$el.getBoundingClientRect()
@@ -35,6 +37,14 @@ export default {
             Bus.$on('toggle-visible', visible => {
                 this.currentVisible = visible
             })
+        },
+        bindClickOutside () {
+            if (!window.hasBindDropdownClickOutside) {
+                window.hasBindDropdownClickOutside = true
+                document.addEventListener('click', () => {
+                    this.currentVisible = false
+                })
+            }
         }
     }
 }

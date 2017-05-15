@@ -17,7 +17,7 @@ import Bus from '../../assets/js/bus'
 export default {
     props: {
         trigger: {
-            default: 'click',
+            default: 'hover',
             validator (val) {
                 return oneOf(val, ['click', 'hover'])
             }
@@ -32,8 +32,7 @@ export default {
         }
     },
     mounted () {
-        this.bindTriggerEvent()
-        this.bindClickOutside()
+        this.bindTriggerEvent()po
     },
     methods: {
         toggleVisible (visible) {
@@ -52,17 +51,6 @@ export default {
                 triggerEl.addEventListener('click', (e) => {
                     this.toggleVisible(true)
                     e.stopPropagation()
-                })
-            }
-        },
-        bindClickOutside () {
-            if (!window.hasBindDropdownClickOutside) {
-                window.hasBindDropdownClickOutside = true
-                document.addEventListener('click', () => {
-                    console.log(this)
-                    if (this.trigger == 'click') {
-                        this.toggleVisible(false)
-                    }
                 })
             }
         }
