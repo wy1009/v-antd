@@ -1,4 +1,4 @@
-// 引入mixin后，需要在this.$el上添加v-show=currentVisible
+// 引入mixin后，需要在this.$el上添加v-show=currentVisible，引入位置为popper组件，popper部分应为一个单独组件
 // 操纵状态：Bus.$emit('toggle-visible', Boolean)
 
 const $body = document.querySelector('body')

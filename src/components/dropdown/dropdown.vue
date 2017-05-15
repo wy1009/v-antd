@@ -4,8 +4,7 @@
             ref="trigger">
             <slot></slot>
         </div>
-        <slot name="list"
-            ref="popper"></slot>
+        <slot name="list"></slot>
     </div>
 </template>
 
@@ -18,7 +17,7 @@ import Bus from '../../assets/js/bus'
 export default {
     props: {
         trigger: {
-            default: 'hover',
+            default: 'click',
             validator (val) {
                 return oneOf(val, ['click', 'hover'])
             }
@@ -32,26 +31,41 @@ export default {
             return `${prefixCls}-trigger`
         }
     },
+    mounted () {
+        this.bindTriggerEvent()
+        this.bindClickOutside()
+    },
     methods: {
         toggleVisible (visible) {
             Bus.$emit('toggle-visible', visible)
         },
-        bindClickOutside () {
+        bindTriggerEvent () {
             let self = this
             let triggerEl = this.$refs.trigger,
-                popperEl = this.$refs.popper
+                popperEl = this.$slots.list[0].elm
             if (this.trigger == 'hover') {
-                
+                triggerEl.addEventListener('mouseenter', () => this.toggleVisible(true))
+                triggerEl.addEventListener('mouseleave', () => this.toggleVisible(false))
+                popperEl.addEventListener('mouseenter', () => this.toggleVisible(true))
+                popperEl.addEventListener('mouseleave', () => this.toggleVisible(false))
             } else if (this.trigger == 'click') {
-
-            }
-            if (!window.hasBindDropdownClickOutside) {
-                window.hasBindDropdownClickOutside = true
-                document.addEventListener('click', function () {
-                    self.currentVisible = false
+                triggerEl.addEventListener('click', (e) => {
+                    this.toggleVisible(true)
+                    e.stopPropagation()
                 })
             }
         },
+        bindClickOutside () {
+            if (!window.hasBindDropdownClickOutside) {
+                window.hasBindDropdownClickOutside = true
+                document.addEventListener('click', () => {
+                    console.log(this)
+                    if (this.trigger == 'click') {
+                        this.toggleVisible(false)
+                    }
+                })
+            }
+        }
     }
 }
 </script>
