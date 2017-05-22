@@ -4,7 +4,10 @@
             ref="trigger">
             <slot></slot>
         </div>
-        <slot name="list"></slot>
+        <div :class="listClass"
+            ref="popper">
+            <slot name="list"></slot>
+        </div>
     </div>
 </template>
 
@@ -12,7 +15,7 @@
 const prefixCls = 'ant-dropdown'
 
 import { oneOf } from '../../assets/js/util'
-import Bus from '../../assets/js/bus'
+import Popper from '../../assets/js/popper.js'
 
 export default {
     props: {
@@ -29,31 +32,35 @@ export default {
         },
         triggerClass () {
             return `${prefixCls}-trigger`
+        },
+        listClass () {
+            return `${prefixCls}-list`
         }
     },
     mounted () {
-        this.bindTriggerEvent()po
+        // this.bindTriggerEvent()
+        new Popper(this.$refs.trigger, this.$refs.popper)
     },
     methods: {
         toggleVisible (visible) {
             Bus.$emit('toggle-visible', visible)
         },
-        bindTriggerEvent () {
-            let self = this
-            let triggerEl = this.$refs.trigger,
-                popperEl = this.$slots.list[0].elm
-            if (this.trigger == 'hover') {
-                triggerEl.addEventListener('mouseenter', () => this.toggleVisible(true))
-                triggerEl.addEventListener('mouseleave', () => this.toggleVisible(false))
-                popperEl.addEventListener('mouseenter', () => this.toggleVisible(true))
-                popperEl.addEventListener('mouseleave', () => this.toggleVisible(false))
-            } else if (this.trigger == 'click') {
-                triggerEl.addEventListener('click', (e) => {
-                    this.toggleVisible(true)
-                    e.stopPropagation()
-                })
-            }
-        }
+        // bindTriggerEvent () {
+        //     let self = this
+        //     let triggerEl = this.$refs.trigger,
+        //         popperEl = this.$slots.list[0].elm
+        //     if (this.trigger == 'hover') {
+        //         triggerEl.addEventListener('mouseenter', () => this.toggleVisible(true))
+        //         triggerEl.addEventListener('mouseleave', () => this.toggleVisible(false))
+        //         popperEl.addEventListener('mouseenter', () => this.toggleVisible(true))
+        //         popperEl.addEventListener('mouseleave', () => this.toggleVisible(false))
+        //     } else if (this.trigger == 'click') {
+        //         triggerEl.addEventListener('click', (e) => {
+        //             this.toggleVisible(true)
+        //             e.stopPropagation()
+        //         })
+        //     }
+        // }
     }
 }
 </script>

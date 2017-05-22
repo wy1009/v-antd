@@ -26,6 +26,7 @@ export default {
         // 将popper移到最外层
         movePopper () {
             $body.appendChild(this.$el)
+            // 以父元素为基准定位
             const parentPosition = this.$parent.$el.getBoundingClientRect()
             if (this.$el.style.position !== 'absolute') {
                 this.$el.style.position = 'absolute'
