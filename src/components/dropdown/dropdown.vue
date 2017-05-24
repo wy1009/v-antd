@@ -41,11 +41,44 @@ export default {
             return `${prefixCls}-popper`
         }
     },
+    data () {
+        return {
+            currentVisible: this.visible,
+            popper: {}
+        }
+    },
+    watch: {
+        currentVisible (val) {
+            this.popper.updateVisible(val)
+            this.$emit('on-visible-change')
+        }
+    },
     mounted () {
-        new Popper(this.$refs.ref, this.$refs.popper, {
-            trigger: this.trigger,
+        this.popper = new Popper(this.$refs.ref, this.$refs.popper, {
             visible: this.visible
         })
+        this.bindRefEvent()
+        this.clickOutside()
+    },
+    methods: {
+        bindRefEvent () {
+            if (this.trigger == 'hover') {
+                this.$refs.ref.addEventListener('mouseenter', () => this.currentVisible = true)
+                this.$refs.ref.addEventListener('mouseleave', () => this.currentVisible = false)
+                this.$refs.popper.addEventListener('mouseenter', () => this.currentVisible = true)
+                this.$refs.popper.addEventListener('mouseleave', () => this.currentVisible = false)
+            } else if (this.trigger == 'click') {
+                this.$refs.ref.addEventListener('click', (e) => {
+                    this.currentVisible = true
+                    e.stopPropagation()
+                })
+            }
+        },
+        clickOutside () {
+            document.addEventListener('click', () => {
+                this.currentVisible = false
+            })
+        }
     }
 }
 </script>
