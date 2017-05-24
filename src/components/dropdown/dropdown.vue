@@ -5,8 +5,7 @@
             <slot></slot>
         </div>
         <div :class="popperClass"
-            ref="popper"
-            v-show="currentVisible">
+            ref="popper">
             <slot name="list"></slot>
         </div>
     </div>
@@ -21,15 +20,10 @@ import Popper from '../../assets/js/popper.js'
 export default {
     props: {
         trigger: {
-            default: 'click',
+            default: 'hover',
             validator (val) {
                 return oneOf(val, ['click', 'hover'])
             }
-        }
-    },
-    data () {
-        return {
-            currentVisible: false
         }
     },
     computed: {
@@ -44,26 +38,9 @@ export default {
         }
     },
     mounted () {
-        this.bindRefEvent()
-        new Popper(this.$refs.ref, this.$refs.popper)
-    },
-    methods: {
-        bindRefEvent () {
-            let self = this
-            let refEl = this.$refs.ref,
-                popperEl = this.$slots.list[0].elm
-            if (this.trigger == 'hover') {
-                refEl.addEventListener('mouseenter', () => this.currentVisible = true)
-                refEl.addEventListener('mouseleave', () => this.currentVisible = false)
-                popperEl.addEventListener('mouseenter', () => this.currentVisible = true)
-                popperEl.addEventListener('mouseleave', () => this.currentVisible = false)
-            } else if (this.trigger == 'click') {
-                refEl.addEventListener('click', (e) => {
-                    this.currentVisible = true
-                    e.stopPropagation()
-                })
-            }
-        }
+        new Popper(this.$refs.ref, this.$refs.popper, {
+            trigger: this.trigger
+        })
     }
 }
 </script>
