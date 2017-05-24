@@ -8,7 +8,7 @@
                 <dropdown-menu-item>3d menu item</dropdown-menu-item>
             </dropdown-menu>
         </dropdown>
-        <dropdown>
+        <dropdown trigger="click">
             <a href="javascript:;">Hover me 2 <i class="anticon icon-down"></i></a>
             <dropdown-menu slot="list">
                 <dropdown-menu-item>1st menu item 2</dropdown-menu-item>
