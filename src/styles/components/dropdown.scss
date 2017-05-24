@@ -1,12 +1,14 @@
 $prefix-dropdown: #{$css-prefix}dropdown;
 
 .#{$prefix-dropdown} {
+    display: inline-block;
     &-ref {
         display: inline-block;
     }
     &-menu {
         box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
         border-radius: 4px;
+        background: #fff;
         &-item {
             padding: 7px 8px;
             cursor: pointer;

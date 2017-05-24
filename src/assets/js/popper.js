@@ -5,21 +5,22 @@ function Popper (ref, popper, options) {
     this.popperElm = popper
     // 记得写一个混合对象的函数，做一个初始化配置
     this.options = options
-
     // 根据visible配置显示或隐藏popper
     if (this.options.visible !== true) {
         this.popperElm.style.display = 'none'
     }
-    this.movePopper()
-    this.bindRefEvent()
-    this.clickOutside()
+    // 进行DOM操作后，如果不将getBoundingClientRect操作移入下一个队列，取值会出错
+    setTimeout(() => {
+        this.movePopper()
+        this.bindRefEvent()
+        this.clickOutside()
+    }, 0)
 }
 
 // 移动popper并定位
 Popper.prototype.movePopper = function () {
-    bodyElm.appendChild(this.popperElm)
     const refPosition = this.refElm.getBoundingClientRect()
-    console.log(this.refElm.getBoundingClientRect())
+    bodyElm.appendChild(this.popperElm)
     if (this.popperElm.style.position !== 'absolute') {
         this.popperElm.style.position = 'absolute'
     }
