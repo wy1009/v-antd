@@ -1,6 +1,6 @@
 <template>
     <div class="dropdown">
-        <dropdown>
+        <dropdown :visible="true">
             <a href="javascript:;">Hover me <i class="anticon icon-down"></i></a>
             <dropdown-menu slot="list">
                 <dropdown-menu-item>1st menu item</dropdown-menu-item>

@@ -24,6 +24,10 @@ export default {
             validator (val) {
                 return oneOf(val, ['click', 'hover'])
             }
+        },
+        visible: {
+            default: false,
+            type: Boolean
         }
     },
     computed: {
@@ -39,7 +43,8 @@ export default {
     },
     mounted () {
         new Popper(this.$refs.ref, this.$refs.popper, {
-            trigger: this.trigger
+            trigger: this.trigger,
+            visible: this.visible
         })
     }
 }
