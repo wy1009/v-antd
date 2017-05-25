@@ -79,6 +79,9 @@ export default {
                 this.currentVisible = false
             })
         }
+    },
+    beforeDestroy () {
+        this.popper.updateVisible(false)
     }
 }
 </script>

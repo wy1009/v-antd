@@ -16,7 +16,7 @@
                 <dropdown-menu-item>3d menu item 2</dropdown-menu-item>
             </dropdown-menu>
         </dropdown>
-        <dropdown trigger="click">
+        <dropdown trigger="click" :visible="true">
             <a href="javascript:;">Click Left <i class="anticon icon-down"></i></a>
             <dropdown-menu slot="list">
                 <dropdown-menu-item>1st menu item 2</dropdown-menu-item>
