@@ -58,6 +58,8 @@ export default {
             visible: this.visible
         })
         this.bindRefEvent()
+    },
+    updated () {
         this.clickOutside()
     },
     methods: {
@@ -81,7 +83,7 @@ export default {
         }
     },
     beforeDestroy () {
-        this.popper.updateVisible(false)
+        this.popper.destroy()
     }
 }
 </script>
