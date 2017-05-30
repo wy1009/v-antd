@@ -60,6 +60,7 @@ export default {
         this.bindRefEvent()
     },
     updated () {
+        // DOM已经更新后绑定clickoutside事件，否则前期的其他点击操作会触发事件，致使初始化visible被置为false
         this.clickOutside()
     },
     methods: {
